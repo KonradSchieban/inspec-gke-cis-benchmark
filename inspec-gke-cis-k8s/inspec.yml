@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: inspec-gke-cis-benchmark
+name: inspec-gke-cis-k8s
 title: "InSpec GKE CIS 1.1 Benchmark"
 maintainer: 
 copyright: Google
@@ -21,10 +21,10 @@ license: Apache-2.0
 summary: "Inspec Google Kubernetes Engine Center for Internet Security Benchmark v1.1 Profile"
 version: "0.1.0"
 supports:
-  - platform: gcp
+- platform: k8s
 depends:
-  - name: inspec-gcp-helpers
-    url: https://github.com/GoogleCloudPlatform/inspec-gcp-helpers/archive/v1.0.7.tar.gz
+- name: inspec-k8s
+  url: https://github.com/bgeesaman/inspec-k8s/archive/0.1.2.tar.gz
 inputs:
 - name: gcp_project_id
   description: 'The GCP project identifier.'
@@ -38,13 +38,3 @@ inputs:
   description: 'The URL to the GKE CIS Benchmark'
   value: 'https://www.cisecurity.org/benchmark/kubernetes/'
   type: string
-- name: gcp_gke_locations
-  description: 'The list of regions and/or zone names where GKE clusters are running. An empty array searches all locations'
-  type: array
-  value:
-    - ""
-- name: gce_zones
-  description: 'The list of zone names where GCE instances are running. An empty array searches all locations'
-  type: array
-  value:
-    - ""
